@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark Charcoal */
+    color: #ffffff; /* White */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f; /* Eerie Black */
+    border-bottom: 2px solid #00bfff; /* Deep Sky Blue */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #00bfff; /* Deep Sky Blue */
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; /* Deep Sky Blue */
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
+    }
+}
+
+.intro, .skills, .contact {
+    padding: 20px;
+    background-color: #1f1f1f; /* Eerie Black */
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00bfff; /* Deep Sky Blue */
+    position: relative;
+    overflow: hidden;
+}
+
+.intro h2, .skills h2, .contact h2 {
+    color: #00bfff; /* Deep Sky Blue */
+    text-shadow: 0 0 10px #00bfff;
+}
+
+.intro p, .skills ul, .contact p {
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.intro:before, .skills:before, .contact:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, transparent 40%, #00bfff, transparent 60%, transparent);
+    z-index: 0;
+    transform: rotate(0deg);
+    transition: transform 2s ease-in-out;
+}
+
+.intro:hover:before, .skills:hover:before, .contact:hover:before {
+    transform: rotate(360deg);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #333; /* Dark Gray */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00bfff; /* Deep Sky Blue */
+    animation: fadeInUp 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+ul li:nth-child(1) { animation-delay: 0.2s; }
+ul li:nth-child(2) { animation-delay: 0.4s; }
+ul li:nth-child(3) { animation-delay: 0.6s; }
+ul li:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    background-color: #00bfff; /* Deep Sky Blue */
+    color: #ffffff; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #00bfff; /* Deep Sky Blue */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+button:hover {
+    background-color: #009acd; /* Medium Blue */
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
